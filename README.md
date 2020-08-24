@@ -8,6 +8,18 @@
 
 _{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
 
+## Specifications
+
+* _Program will utilize a notebook constructor as parent object_
+
+* _Program will utilize a task constructor as child objects of notebook constructor_
+
+* _Program will utilize unique Id's on child objects_
+
+* _User will be able to mark a task as complete_
+
+* _User will be able to delete a task once complete_
+
 ## Setup/Installation Requirements
 
 * _This is a great place_
