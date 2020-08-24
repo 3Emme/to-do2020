@@ -59,12 +59,13 @@ Task.prototype.changeTaskStatus = function() {
 
 // User Interface Logic
 $(document).ready(function() {  
-  
-  let notebook = new Notebook(name);
+
 
   $("form#notebookForm").submit(function(event) {
     event.preventDefault();
     let name = $("#name").val();
+    notebook = new Notebook(name);
+    console.log(notebook);
     $("#notebookName").text(name);
     $("#taskListForm").show();
     $("#notebookForm").hide();
@@ -80,5 +81,4 @@ $(document).ready(function() {
     $("#taskListForm").trigger("reset");
     //$("#unorderedTaskList").text(Notebook($("#task").val()));
   });
-  console.log(notebook);
 });
