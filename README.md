@@ -10,17 +10,19 @@ _{This is a detailed description of your application. Its purpose and usage.  Gi
 
 ## Specifications
 
-[X] Program will utilize a notebook constructor as parent object_
+[X] Program will utilize a notebook constructor as parent object
 
-[X] Program will utilize a task constructor as child objects of notebook constructor_
+[X] Program will utilize a task constructor as child objects of notebook constructor
 
-[X] Program will utilize unique Id's on child objects_
+[X] Program will utilize unique Id's on child objects
 
 [X] User will be able to search for a task using Id.
 
-* _User will be able to mark a task as complete_
+[X] User will be able to update a task
 
-[X] User will be able to delete a task once complete_
+[] User will be able to mark a task as complete
+
+[X] User will be able to delete a task once complete
 
 ## Setup/Installation Requirements
 

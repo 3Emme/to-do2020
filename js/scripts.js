@@ -45,3 +45,7 @@ function Task(task, date, status) {
   this.date = date;
   this.status = status;
 }
+
+Task.prototype.updateTask() = function(newTask) {
+  this.task = newTask;
+}
