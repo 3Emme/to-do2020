@@ -1,6 +1,7 @@
 //Business Logic for Notebook
 
-function Notebook() {
+function Notebook(name) {
+  this.name = name;
   this.tasks = [];
   this.currentId = 0;
 }
@@ -40,8 +41,8 @@ Notebook.prototype.deleteTask = function(id){
 
 //Business Logic for Tasks
 
-function Task(task, date) {
-  this.task = task;
+function Task(taskName, date) {
+  this.taskName = taskName;
   this.date = date;
   this.status = "Incomplete";
 }
@@ -55,11 +56,20 @@ Task.prototype.changeTaskStatus() = function() {
 }
 
 
-// Interface Logic
-$(document).ready(function(){  
-  $("form#taskList").submit(function(event){
+// User Interface Logic
+$(document).ready(function() {  
+  $("form#taskListForm").submit(function(event) {
     event.preventDefault();
-    $("#answerDisplay").show();
-    $("#result").text(roboger($("#initialNumber").val()));
-  })
+    let name = $("#name").val();
+    let notebook = new Notebook(name);
+    $("#notebootName").text(name);
+    $("#addTaskButton").show();
+  });
+
+  $("#addTaskButton").click(function(event) {
+    event.preventDefault();
+    let taskName = $("#task").val();
+    let date = $("#date").val();
+    let newTask = Task(taskName, date);
+  });
 });
