@@ -58,8 +58,16 @@ Task.prototype.changeTaskStatus = function() {
 
 
 // User Interface Logic
-$(document).ready(function() {  
+function displayTaskDetails (notebookToDisplay) {
+  let tasksList = $("#unorderedTaskList");
+  let htmlForTaskInfo = "";
+  notebookToDisplay.tasks.forEach(function(task) {
+    htmlForTaskInfo += "<li id=" + task.id + ">" + task.taskName + " " + task.date + "</li>";
+  });
+  tasksList.html(htmlForTaskInfo);
+};
 
+$(document).ready(function() {  
 
   $("form#notebookForm").submit(function(event) {
     event.preventDefault();
@@ -79,6 +87,6 @@ $(document).ready(function() {
     notebook.addTask(newTask);
     console.log(newTask);
     $("#taskListForm").trigger("reset");
-    //$("#unorderedTaskList").text(Notebook($("#task").val()));
+    displayTaskDetails(notebook);
   });
 });
