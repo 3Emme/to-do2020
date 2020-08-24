@@ -16,9 +16,11 @@ _{This is a detailed description of your application. Its purpose and usage.  Gi
 
 [X] Program will utilize unique Id's on child objects_
 
+[X] User will be able to search for a task using Id.
+
 * _User will be able to mark a task as complete_
 
-* _User will be able to delete a task once complete_
+[X] User will be able to delete a task once complete_
 
 ## Setup/Installation Requirements
 
