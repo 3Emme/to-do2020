@@ -27,7 +27,6 @@ Notebook.prototype.findTask = function(id) {
   return false;
 }
 
-
 Notebook.prototype.deleteTask = function(id){
   for (let i=0; i< this.tasks.length; i++) {
     if (this.tasks[i]) {
@@ -37,6 +36,7 @@ Notebook.prototype.deleteTask = function(id){
       }
     };
     return false;
+  };
 }
 
 //Business Logic for Tasks
@@ -47,29 +47,38 @@ function Task(taskName, date) {
   this.status = "Incomplete";
 }
 
-Task.prototype.updateTask() = function(newTask) {
+Task.prototype.updateTask = function(newTask) {
   this.task = newTask;
+  return newTask;
 }
 
-Task.prototype.changeTaskStatus() = function() {
+Task.prototype.changeTaskStatus = function() {
   this.status = "Complete";
 }
 
 
 // User Interface Logic
 $(document).ready(function() {  
-  $("form#taskListForm").submit(function(event) {
+  
+  let notebook = new Notebook(name);
+
+  $("form#notebookForm").submit(function(event) {
     event.preventDefault();
     let name = $("#name").val();
-    let notebook = new Notebook(name);
-    $("#notebootName").text(name);
-    $("#addTaskButton").show();
+    $("#notebookName").text(name);
+    $("#taskListForm").show();
+    $("#notebookForm").hide();
   });
 
   $("#addTaskButton").click(function(event) {
     event.preventDefault();
     let taskName = $("#task").val();
     let date = $("#date").val();
-    let newTask = Task(taskName, date);
+    let newTask = new Task(taskName, date);
+    notebook.addTask(newTask);
+    console.log(newTask);
+    $("#taskListForm").trigger("reset");
+    //$("#unorderedTaskList").text(Notebook($("#task").val()));
   });
+  console.log(notebook);
 });

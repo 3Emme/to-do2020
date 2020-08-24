@@ -9,19 +9,28 @@
 </head>
 <body>
   <div class="container">
+    <form id="notebookForm">
+      <div class="row">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Notebook name" id="name">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Create a Notebook!</button>
+    </form>
     <form id="taskListForm">
       <div class="row">
         <div class="col">
-          <input type="text" class="form-control" placeholder="Task">
+          <input type="text" class="form-control" placeholder="Task" id="task">
         </div>
         <div class="col">
-          <input type="text" class="form-control" placeholder="Date">
+          <input type="text" class="form-control" placeholder="Date" id="date">
         </div>
       </div>
-      <button type="submit" class="btn btn-primary">Create task!</button>
+      <button type="submit" class="btn btn-primary" id="addTaskButton">Create task!</button>
     </form>
-    <h1> Tasks:</h1>
-    <ul id="unorderedList">
+    <h1 id="notebookName"></h1>
+    <h3> Tasks:</h3>
+    <ul id="unorderedTaskList">
     </ul>
   </div>
 </body>
