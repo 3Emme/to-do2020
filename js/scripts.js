@@ -40,12 +40,26 @@ Notebook.prototype.deleteTask = function(id){
 
 //Business Logic for Tasks
 
-function Task(task, date, status) {
+function Task(task, date) {
   this.task = task;
   this.date = date;
-  this.status = status;
+  this.status = "Incomplete";
 }
 
 Task.prototype.updateTask() = function(newTask) {
   this.task = newTask;
 }
+
+Task.prototype.changeTaskStatus() = function() {
+  this.status = "Complete";
+}
+
+
+// Interface Logic
+$(document).ready(function(){  
+  $("form#taskList").submit(function(event){
+    event.preventDefault();
+    $("#answerDisplay").show();
+    $("#result").text(roboger($("#initialNumber").val()));
+  })
+});
